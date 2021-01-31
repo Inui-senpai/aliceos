@@ -7,7 +7,7 @@
 # 
 
 # MARK: ASSetupAssistantView screen entry point
-init screen ASSetupAssistantView(title="Setup Assistant", instructions="", useInputMethod=False, completed=False):
+init screen ASSetupAssistantView(title="Мастер установки", instructions="", useInputMethod=False, completed=False):
     tag ASSetupAssistantView
     zorder 100
     modal True
@@ -56,7 +56,7 @@ init screen ASSetupAssistantView(title="Setup Assistant", instructions="", useIn
                     xalign 0.5
             else:
                 python:
-                    button_text = "Finish" if completed else "Next"
+                    button_text = "Завершить" if completed else "Далее"
 
                 textbutton "[button_text]" action Return('didCompleteStep'):
                     style "ASInterfacePushButton"
@@ -66,7 +66,7 @@ init screen ASSetupAssistantView(title="Setup Assistant", instructions="", useIn
             
             if useInputMethod:
                 null height 16
-                text "To continue, press Return or Enter.":
+                text "Для продолжения нажмите клавишу «Ввод».":
                     style "ASSetupAssistantViewSmallerDetail"
                     xalign 0.5
                     yalign 0.75

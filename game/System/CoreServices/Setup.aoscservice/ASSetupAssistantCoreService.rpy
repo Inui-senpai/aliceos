@@ -9,13 +9,13 @@
 init 5 python:
     
     class ASSetupAssistantCoreService(ASCoreServiceRepresentative):
-        bundleName = "Setup Assistant"
+        bundleName = "Мастер установки"
         bundleId = "app.aliceos.core-services.setup-assitant"
         bundleDir = AS_CORESERVICES_DIR + "Setup.aoscservice/"
         bundleAuthor = "Project Alice"
         bundleVersion = "1.0.0"
         bundleDescription = """\
-            Quickly set up AliceOS for configuration.
+            Быстрая настройка AliceOS для дальнейшей конфигурации.
         """
         
         def getFromElements(self, filename):
@@ -27,13 +27,13 @@ init 5 python:
         def startSetup(self, express=True, disclaimer=None):
             persistent.AS_COMPLETED_SETUP = False
             if not express:
-                self.runStep("Welcome to AliceOS", "Welcome to the Setup Assistant for AliceOS. This assistant will help set up crucial parts of AliceOS such as your username and taking care of any legal agreements.\n\nTo continue with the assistant, press Next.")
-                self.runStep("Know Your Rights", "AliceOS is free and open-source software, licensed under the BSD license. This license allows you and the game creator to modify AliceOS to however you like and need without needing to seek permission.\n\nA version of the BSD license should have been included in the AliceOS package; if unavailable, visit {b}https://opensource.org/licenses/BSD-2-Clause{/b} and contact the game's developer to include the license.")
+                self.runStep("Добро пожаловать в AliceOS", "Добро пожаловать в мастер установки AliceOS. Мастер поможет вам настроить такие важные части AliceOS, как ваше имя пользователя, и урегулировать любые юридические соглашения.\n\nДля продолжения нажмите «Далее».")
+                self.runStep("Знайте свои права", "AliceOS является свободным программным обеспечением с открытым исходным кодом, лицензированным под условиями лицензии BSD. Эта лицензия позволяет вам и создателю игры модифицировать AliceOS в любом ключе без необходимости спрашивать разрешения.\n\nВерсия BSD-лицензии должна быть включена в пакет AliceOS; в противном случае, посетите сайт {b}https://opensource.org/licenses/BSD-2-Clause{/b} и свяжитесь с разработчиком игры, дабы тот добавил лицензию.")
             if disclaimer != None:
-                self.runStep("Game Licensing Agreement", "Your game provider has requested that you read the following information and agree to any terms.\n\n" + disclaimer)
-            persistent.playername = self.runStep("Create Your Username", "Type in a username that you want to use while using AliceOS. This name will also appear as your character name if applicable.", typeInput=True)
+                self.runStep("Лицензионное соглашение", "Ваш поставщик игр попросил вас прочитать следующую информацию и согласиться с любыми условиями.\n\n" + disclaimer)
+            persistent.playername = self.runStep("Создайте своё имя пользователя", "Введите имя пользователя, которое вы хотите использовать в среде AliceOS. Это имя также будет отображаться в качестве имени вашего персонажа, если применимо.", typeInput=True)
             if not express:
-                self.runStep("Setup Complete", "The Setup Assistant has completed all of the necessary setup tasks and AliceOS is ready for use.\n\nMore information about what AliceOS is, notes for this release, and what you can do with it can be found at {b}https://aliceos.app{/b}.\n\nThank you for choosing AliceOS. To exit the Setup Assistant, press Finish.", complete=True)
+                self.runStep("Установка завершена", "Мастер установки завершил все необходимые задачи, и система AliceOS готова к использованию.\n\nПодробности о системе AliceOS, примечания к данному релизу, и всё то, что вы можете делать с ним, можно найти на сайте {b}https://aliceos.app{/b}.\n\nСпасибо, что выбрали AliceOS. Для выхода из мастера установки нажмите «Завершить».", complete=True)
             persistent.AS_COMPLETED_SETUP = True
             return persistent.playername
 
