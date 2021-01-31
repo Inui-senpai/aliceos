@@ -11,13 +11,13 @@ init 5 python:
     from threading import Thread
     
     class ASBootloaderCoreService(ASCoreServiceRepresentative):
-        bundleName = "Bootloader"
+        bundleName = "Загрузчик"
         bundleId = "app.aliceos.core-services.boot"
         bundleDir = AS_CORESERVICES_DIR + "Boot.aoscservice/"
         bundleAuthor = "Project Alice"
         bundleVersion = "1.0.0"
         bundleDescription = """\
-            Show a loading screen for AliceOS.
+            Показывает экран загрузки для AliceOS.
         """
 
         # Looks for all apps using AppKit and returns a list of them.
