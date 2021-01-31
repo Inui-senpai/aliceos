@@ -9,13 +9,13 @@
 init 5 python:
 
     class ASSysInfoApp(ASAppRepresentative):
-        bundleName = "About AliceOS"
+        bundleName = "О системе AliceOS"
         bundleId = "app.aliceos.sysinfo"
         bundleDir = AS_DEFAULT_APP_DIR + "SysInfo.aosapp/"
         bundleAuthor = "Project Alice"
         bundleVersion = "1.0.0"
         bundleDescription = """\
-            View System Information about AliceOS.
+            Просмотр информации об операционной системе AliceOS.
         """
 
         requires = { }
