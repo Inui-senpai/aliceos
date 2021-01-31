@@ -8,13 +8,13 @@
 
 init 10 python:
     class ASMessages(ASAppRepresentative):
-        bundleName = "Messages"
+        bundleName = "Сообщения"
         bundleId = "app.aliceos.messages"
         bundleDir = AS_DEFAULT_APP_DIR + "Messages.aosapp/"
         bundleAuthor = "Project Alice"
         bundleVersion = "2.0.0"
         bundleDescription = """\
-            Send and receive messages from your favorite characters in-game.
+            Отправка и получение сообщений между вами и вашими любимыми персонажами в игре.
         """
 
         requires = {
@@ -28,7 +28,7 @@ init 10 python:
             return True
 
         def applicationWillLaunch(self):
-            self.applicationWillRequestBasicAlert("Messages Not Ready", "You'll still be able to receive notifications from characters in-game, but you won't be able to send any.")
+            self.applicationWillRequestBasicAlert("Приложение «Сообщения» не готово", "У вас по-прежнему будет возможность получать сообщения от персонажей в игре, но не будет возможности отправлять их.")
             return
 
         def __init__(self):
