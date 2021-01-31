@@ -9,13 +9,13 @@
 init 10 python:
 
     class ASInventories(ASAppRepresentative):
-        bundleName = "Inventories"
+        bundleName = "Инвентарь"
         bundleId = "app.aliceos.inventories"
         bundleDir = AS_DEFAULT_APP_DIR + "Inventories.aosapp/"
         bundleAuthor = "Project Alice"
         bundleVersion = "1.0.0"
         bundleDescription = """\
-            View, use, and manage items you receive in-game with Inventories, a simple app designed for make item inventory systems easy.
+            Просмотр, использование и управление предметами, добавленными во внутриигровой инвентарь; Инвентарь – это простое приложение, созданное для упрощения систем инвентарей.
         """
 
         requires = { AS_REQUIRES_NOTIFICATIONKIT }
@@ -62,7 +62,7 @@ init 10 python:
             if isinstance(item, ASInventoryItem):
                 self.inventory.append(item)
                 if not silent:
-                    shouldDisplayItem = self.applicationWillRequestNotification("%s received!" % (item.name), "Go to Inventories to learn more.")
+                    shouldDisplayItem = self.applicationWillRequestNotification("Получен предмет: %s!" % (item.name), "Откройте Инвентарь, чтобы узнать больше.")
 
                     if shouldDisplayItem == "didClickRespond":
                         renpy.show_screen("ASInventoryManagerView", currentItem=item)
