@@ -22,13 +22,13 @@ init screen ASDesktopTopBar():
             yfill True
             
             if renpy.get_screen("ASDesktopLaunchpadView"):
-                textbutton _("Activities") action Hide("ASDesktopLaunchpadView"):
+                textbutton _("Обзор") action Hide("ASDesktopLaunchpadView"):
                     style "ASDesktopTopBarButton"
                     xalign 0.025
                     yalign 0.5
         
             else:
-                textbutton _("Activities") action Show("ASDesktopLaunchpadView"):
+                textbutton _("Обзор") action Show("ASDesktopLaunchpadView"):
                     style "ASDesktopTopBarButton"
                     xalign 0.025
                     yalign 0.5

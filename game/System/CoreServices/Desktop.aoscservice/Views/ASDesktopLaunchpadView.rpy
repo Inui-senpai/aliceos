@@ -21,7 +21,7 @@ init screen ASDesktopLaunchpadView():
         xalign 0.5
 
         if appsForLauncher == []:
-            text _("No apps installed."):
+            text _("Нет установленных приложений."):
                 style "ASDesktopLaunchpadViewCenteredText"
         else:
             grid len(appsForLauncher) 1:
