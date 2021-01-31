@@ -152,7 +152,7 @@ define config.window_icon = "gui/window_icon.png"
 
 init python:
 
-    build.package(build.directory_name + "ASBaseSystem", 'zip', build.name, description="AliceOS Base System Distributable")
+    build.package(build.directory_name + "ASBaseSystem", 'zip', build.name, description="Распространяемый пакет базовой системы AliceOS")
 
     build.archive("AliceOSBaseSystem", build.name)
 
