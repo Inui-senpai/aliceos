@@ -9,13 +9,13 @@
 init 5 python:
 
     class ASHaltCoreService(ASCoreServiceRepresentative):
-        bundleName = "Error Halt System"
+        bundleName = "Система принудительного останова"
         bundleId = "app.aliceos.core-services.halt"
         bundleDir = AS_CORESERVICES_DIR + "Halt.aoscservice/"
         bundleAuthor = "Project Alice"
         bundleVersion = "1.0.0"
         bundleDescription = """\
-            Safely catch system-level errors and restart AliceOS.
+            Безопасно перехватывает ошибки системного уровня и перезапускает AliceOS.
         """
 
         def halt(self, code=""):
