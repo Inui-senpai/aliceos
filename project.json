@@ -1,1 +1,1 @@
-{"build_update": false, "packages": ["_ASBaseSystem"], "add_from": true, "force_recompile": true, "renamed_all": true}
+{"display_name": "AliceOS Prospect Park", "android_build": "Release", "renamed_all": true, "renamed_steam": true, "force_recompile": true, "build_update": true, "packages": ["_ASBaseSystem"], "add_from": false}
