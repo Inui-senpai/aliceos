@@ -9,13 +9,13 @@
 init 5 python:
 
     class ASDesktopCoreService(ASCoreServiceRepresentative):
-        bundleName = "Desktop"
+        bundleName = "Рабочий стол"
         bundleId = "app.aliceos.core-services.desktop"
         bundleDir = AS_CORESERVICES_DIR + "Desktop.aoscservice/"
         bundleAuthor = "Project Alice"
         bundleVersion = "1.0.0"
         bundleDescription = """\
-            Desktop provides quick access to applications in AliceOS.
+            Рабочий стол предоставляет быстрый доступ ко всем приложениям в AliceOS.
         """
 
         # Looks for all apps using AppKit and returns a list of them.
@@ -28,8 +28,11 @@ init 5 python:
             return apps
 
         def gatherCurrentTime(self):
-            from time import gmtime, strftime
-            return strftime("%a. %I:%M %p")
+            from datetime import datetime
+            now = datetime.now()
+            weekday = now.weekday()
+            weekdays = ("Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс")
+            return now.strftime("{w}, %H:%M").format(w=weekdays[weekday])
 
         def _callDesktop(self):
             renpy.call_screen("ASDesktopShellView")
