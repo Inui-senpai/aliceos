@@ -8,13 +8,13 @@
 
 init 10 python:
     class ASAppManager(ASAppRepresentative):
-        bundleName = "App Manager"
+        bundleName = "Менеджер приложений"
         bundleId = "app.aliceos.app-manager"
         bundleDir = AS_DEFAULT_APP_DIR + "AppManager.aosapp/"
         bundleAuthor = "Project Alice"
         bundleVersion = "1.0.0"
         bundleDescription = """\
-            View the installed apps on AliceOS in detail and manage their permissions.
+            Подробный просмотр установленных приложений на AliceOS и управление их разрешениями.
         """
 
         requires = { }

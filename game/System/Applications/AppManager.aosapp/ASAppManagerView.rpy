@@ -24,7 +24,7 @@ screen ASAppManagerView():
             xalign 0.5
             yfit True
 
-            use ASInterfaceTitlebar("App Manager", onClose=Hide("ASAppManagerView"))
+            use ASInterfaceTitlebar("Менеджер приложений", onClose=Hide("ASAppManagerView"))
 
             hbox:
                 style_prefix "ASAppManager"
@@ -32,7 +32,7 @@ screen ASAppManagerView():
 
                 vbox:
                     spacing 8
-                    label "Applications"
+                    label "Приложения"
 
                     viewport:
                         style_prefix "ASInterfaceScrollbar"
@@ -58,7 +58,7 @@ screen ASAppManagerView():
                 vbox:
                     xfill True
                     if currentAppView == None:
-                        text "Select an app from the left side to view its properties.":
+                        text "Выберите приложение из списка слева, чтобы просмотреть его свойства.":
                             xalign 0.5
 
 
@@ -74,24 +74,24 @@ screen ASAppManagerView():
                                     style "ASAppManager_DetailedAppName"
                                 text "[currentAppView.bundleAuthor]":
                                     style "ASAppManager_DetailedAppAuthor_text"
-                                text "Version [currentAppView.bundleVersion] ([currentAppView.bundleId])"
+                                text "Версия [currentAppView.bundleVersion] ([currentAppView.bundleId])"
                                 null height 8
 
-                                textbutton "Launch" action Function(currentAppView.applicationWillLaunch):
+                                textbutton "Запустить" action Function(currentAppView.applicationWillLaunch):
                                     style "ASInterfacePushButton"
 
                         null height 8
 
                         vbox:
                             $ currentAppView_description = currentAppView.bundleDescription.strip()
-                            text "About this app":
+                            text "Об этом приложении":
                                 style "ASAppManager_DetailedEmphasis_text"
                             text "[currentAppView_description]"
                             null height 16
 
                             if currentAppView.requires:
 
-                                text "Allow this app to:":
+                                text "Разрешить приложению:":
                                     style "ASAppManager_DetailedEmphasis_text"
 
                                 vbox:
@@ -99,18 +99,18 @@ screen ASAppManagerView():
                                     spacing 8
 
                                     if AS_REQUIRES_NOTIFICATIONKIT in currentAppView.requires:
-                                        textbutton "Send notifications" action ToggleDict(persistent.AS_PERMISSIONS[currentAppView.bundleId], AS_REQUIRES_NOTIFICATIONKIT, True, False)
-                                        text "Notifications may include banners, alerts, and sounds.":
+                                        textbutton "Отправлять уведомления" action ToggleDict(persistent.AS_PERMISSIONS[currentAppView.bundleId], AS_REQUIRES_NOTIFICATIONKIT, True, False)
+                                        text "Уведомления могут включать в себя баннеры, предупреждения и звуки.":
                                             style "ASAppManager_text"
 
                                     if AS_REQUIRES_FULL_DISK_ACCESS in currentAppView.requires:
-                                        textbutton "Access your files" action ToggleDict(persistent.AS_PERMISSIONS[currentAppView.bundleId], AS_REQUIRES_FULL_DISK_ACCESS, True, False)
-                                        text "File access may include your Home directory and your AliceOS installation.":
+                                        textbutton "Доступ к файлам" action ToggleDict(persistent.AS_PERMISSIONS[currentAppView.bundleId], AS_REQUIRES_FULL_DISK_ACCESS, True, False)
+                                        text "Доступ к файлам может включать в себя вашу Домашнюю папку и директорию вашей установленной копии AliceOS.":
                                             style "ASAppManager_text"
 
                                     if AS_REQUIRES_SYSTEM_EVENTS in currentAppView.requires:
-                                        textbutton "Change settings and watch system events" action ToggleDict(persistent.AS_PERMISSIONS[currentAppView.bundleId], AS_REQUIRES_SYSTEM_EVENTS, True, False)
-                                        text "This may include changing AliceOS settings or watching system events such as startup.":
+                                        textbutton "Изменять настройки и отслеживать системные события" action ToggleDict(persistent.AS_PERMISSIONS[currentAppView.bundleId], AS_REQUIRES_SYSTEM_EVENTS, True, False)
+                                        text "Это может включать в себя изменение настроек AliceOS и/или отслеживание таких системных событий, как запуск.":
                                             style "ASAppManager_text"
                             else:
-                                text "This app doesn't require any permissions."
+                                text "Разрешения для этого приложения не требуются."
