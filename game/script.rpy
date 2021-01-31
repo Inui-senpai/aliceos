@@ -3,10 +3,9 @@ label before_main_menu:
     return
 
 label main_menu:
-    python:
-        ASDesktop.showDesktop()
+    $ ASDesktop._callDesktop()
     return
 
 label start:
-    $ ASDesktop.showDesktop()
+    $ ASDesktop._callDesktop()
     return
