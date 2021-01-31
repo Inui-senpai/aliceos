@@ -2,27 +2,30 @@
 
 [![Latest release](https://img.shields.io/github/v/release/projectalicedev/aliceos)](https://github.com/projectalicedev/aliceos/releases) ![Build Status](https://github.com/ProjectAliceDev/aliceos/workflows/Build%20AliceOS%20Archive/badge.svg) ![Lint Status](https://github.com/ProjectAliceDev/aliceos/workflows/Lint/badge.svg)
 
-AliceOS is a robust, evolving Ren'Py framework by Project Alice that adds an operating system-like experience to visual novel projects. AliceOS is easy to install, extendable, and is great for adding another layer of interactivity to your games.
+AliceOS — это надёжный, развивающийся фреймворк Ren'Py, созданный Project Alice, который добавляет опыт работы с операционной системой в проекты визуальных новелл. AliceOS легко устанавливается, расширяется, и отлично подходит для добавления ещё одного уровня интерактивности в ваши игры.
 
-## Core principles
+## Основные принципы
 
-The core principles of AliceOS are:
+Основные принципы AliceOS:
 
-- **Modular**: AliceOS uses a new framework format, under the `.aosframework` format. These frameworks are placed in the `System/Frameworks` folder and are not heavily reliant on AppKit.aosframework. However, the definitions file that states the default directories and what-not must be included in the System folder (including fonts).
-- **Apple-style APIs**: AliceOS's APIs aim to be easy-to-use and familiar to developers that have worked with APIs for macOS, iOS, tvOS, and watchOS.
-- **Safely extensible**: AliceOS includes support for extending itself with apps that are protected using appropriate, official APIs.
-- **Easy-to-install**: AliceOS installation is as easy as just copying the Ren'Py archive over to the game folder.
+- **Модульность**: AliceOS использует новый формат фреймворков, обозначенный форматом `.aosframework`. Эти фреймворки помещены в папку `System/Frameworks` и не сильно зависят от AppKit.aosframework. Однако, файл определений, в котором указаны каталоги по умолчанию, и всё то, что не нужно использовать, должен находиться в папке `System` (включая шрифты).
+- **API-интерфейсы в стиле Apple**: API-интерфейсы AliceOS стремятся быть простыми в использовании и знакомыми разработчикам, работавшим с API для macOS, iOS, tvOS и watchOS.
+- **Безопасное расширение функционала**: AliceOS включает в себя поддержку расширения за счёт приложений, которые защищены с помощью соответствующих официальных API.
+- **Простота установки**: Установка AliceOS так же проста, как и обычное копирование архива Ren'Py в папку `game` игры.
 
-## Build instructions
-To build this project, clone the repository and in Ren'Py Launcher, click "Distribute" and select "AliceOS Base System Distributable". The resulting file will be in a ZIP archive with `AliceOSBaseSystem.rpa`.
+## Инструкции по сборке
+Чтобы собрать этот проект, клонируйте репозиторий, и в лаунчере Ren'Py щёлкните на "Построить дистрибутивы" и выберите "Распространяемый пакет базовой системы AliceOS". Конечный файл будет упакован в ZIP-архив и иметь название `AliceOSBaseSystem.rpa`.
 
-## Install instructions (to existing projects)
-To install AliceOS directly without grabbing the source, download the ZIP archive from the release and copy `AliceOSBaseSystem.rpa` to your `game` folder.
+## Инструкции по установке (для существующих проектов)
+Чтобы установить AliceOS напрямую, без скачивания исходного кода, скачайте ZIP-архив из Релизов и скопируйте файл `AliceOSBaseSystem.rpa` в вашу папку `game`.
 
-Additional instructions can be found in the [documentation](https://nextdocs.aliceos.app/01-install/).
+Дополнительные инструкции могут быть найдены в [документации](https://nextdocs.aliceos.app/01-install/).
 
-## Documentation build instructions
-To generate the documentation site (requires MkDocs and Material for MkDocs):
+## Инструкции по сборке документации
+Чтобы сгенерировать сайт документации (необходимы MkDocs и Material для MkDocs):
 ```bash
 mkdocs build -d docs
 ```
+
+## Дополнительные примечания
+Данный проект является полным переводом [оригинального проекта](https://github.com/ProjectAliceDev/aliceos) на русский язык и адаптацией для корректной работы на последней версии Ren'Py (7.4.2.1292). Ошибки и недочёты в локализации прошу оставлять здесь: https://vk.com/topic-165582702_39071884
