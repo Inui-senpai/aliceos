@@ -28,7 +28,7 @@ init screen ASNotificationBanner(applet=None, message, withDetails, responseCall
                 if not applet:
                     hbox:
                         add AS_FRAMEWORK_DIR("NotificationKit") + "Resources/appMissingIcon.png"
-                        text "Unknown Bundle":
+                        text "Неизвестный пакет":
                             style "ASNotificationBannerSource"
                 else:
                     hbox:
@@ -36,7 +36,7 @@ init screen ASNotificationBanner(applet=None, message, withDetails, responseCall
                         text applet.bundleName:
                             style "ASNotificationBannerSource"
 
-                textbutton _("Respond") action responseCallback:
+                textbutton _("Ответить") action responseCallback:
                     style "ASNotificationBannerButton"
                     xalign 1.0
             null height 2

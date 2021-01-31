@@ -43,5 +43,5 @@ init screen ASNotificationAlert(message, withDetails, onDismissCallback=Return('
                 xalign 0.5
                 spacing 100
                 
-                textbutton _("OK") action onDismissCallback:
+                textbutton _("ОК") action onDismissCallback:
                     style "ASNotificationAlertAcceptButton"
