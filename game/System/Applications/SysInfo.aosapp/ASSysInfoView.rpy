@@ -37,6 +37,6 @@ screen ASSysInfoView():
                     null height 24
                     text "Перевод на русский язык: MtnDewSmoker420, специально для RG Smoking Room."
                     null height 32
-                    text "© 2018-2019 Project Alice.\nAliceOS является свободным программным обеспечением с открытым исходным кодом, лицензированным по условиям лицензии BSD 2-Clause.":
+                    text "© 2018-2019 Project Alice.\nAliceOS является свободным программным обеспечением с открытым исходным кодом, лицензированным по условиям лицензии BSD 2-го типа.":
                         style "ASSysInfoCopyright_text"
                         yalign 1.0
